@@ -11,6 +11,7 @@
           this.mainCountainerEl = document.querySelector("#main-container");
           this.showButtonEl = document.querySelector("#show-message-button");
           this.hideButtonEl = document.querySelector("#hide-message-button");
+          this.inputEl = document.querySelector("#message-input");
           this.showButtonEl.addEventListener("click", () => {
             this.displayMessage();
           });
@@ -21,8 +22,10 @@
         displayMessage() {
           console.log("Thanks for clicking me!");
           this.messageEl = document.createElement("div");
-          this.messageEl.id = "message";
-          this.messageEl.innerText = "This is a message displayed by JavaScript";
+          this.messageEl.setAttribute("id", "message");
+          console.log(this.inputEl.value);
+          console.log(this.messageEl.value);
+          this.messageEl.innerText = this.inputEl.value.toString();
           this.mainCountainerEl.append(this.messageEl);
         }
         hideMessage() {
